@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Fetching api</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+   </head>
+
+   <body>
+
+  <div class="row">
+<div class="col m3 l4">
+  <h4 class="teal-text"> Enter ISBN Number!</h4> <br>
+    <input [(ngModel)]="n" type="text" >
+
+    <button class="btn btn-indigo" (click)="get()"><i class="material-icons right">arrow_forward</i> Get info</button> <br>
+<br>
+
+
+
+
+
+  </div>
+
+</div>
+<div class="container" >
+<ul class="collection" *ngIf="array.Title!=''">
+
+<li class="collection-items">
+  <h4 class="teal-text ">{{Title}}  - {{ array.Title}}</h4>
+
+</li>
+
+</ul>
+
+
+</div>
+
+<div class="container" *ngIf="array.Description==''">
+<h4 class="teal-text"> Description of this isbn is unavailable! try anothere one </h4><br>
+
+</div>
+
+<div class="container " *ngIf="array.Description!=''">
+<ul class="collection"  >
+<li class="collection-items ">
+  <br>
+<h4 class="teal-text ">{{array.Title}}</h4> <br>
+<h4 class="teal-text  ">{{array.Description}}</h4>
+
+</li>
+
+
+
+
+
+</ul>
+</div>
+   </body>
+</html>
